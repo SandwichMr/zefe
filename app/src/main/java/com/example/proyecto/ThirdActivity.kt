@@ -4,10 +4,8 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyecto.databinding.ActivityThirdBinding
@@ -25,21 +23,9 @@ class ThirdActivity : AppCompatActivity() {
         supportActionBar?.title = "Atrás"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.imageButtonPhone.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                val phoneNumber = binding.editTextPhone.text.toString()
-                if (phoneNumber.isNotEmpty()) {
-                    val intentCall = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
-                    startActivity(intentCall)
-                } else {
-                    Toast.makeText(
-                        this@ThirdActivity,
-                        "Debes marcar un número, intenta nuevamente",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
-        })
+        binding.imageButtonPhone.setOnClickListener {
+            marcarNumeroIngresado()
+        }
 
         binding.imageButtonWeb.setOnClickListener {
             val url = binding.editTextWeb.text.toString().trim()
@@ -60,10 +46,10 @@ class ThirdActivity : AppCompatActivity() {
         }
 
         binding.buttonEmailMe.setOnClickListener {
-            val mailto = "mailto:correoprueba_1@hotmail.com" +
-                "?cc=correoprueba_2@gmail.com" +
+            val mailto = "mailto:${getString(R.string.email_to)}" +
+                "?cc=${getString(R.string.email_cc)}" +
                 "&subject=" + Uri.encode("Asunto del correo") +
-                "&body=" + Uri.encode("Esta es una prueba...")
+                "&body=" + Uri.encode(getString(R.string.default_message))
             val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.parse(mailto))
             try {
                 startActivity(Intent.createChooser(emailIntent, "Elige el cliente de correo..."))
@@ -77,7 +63,7 @@ class ThirdActivity : AppCompatActivity() {
         }
 
         binding.buttonContactPhone.setOnClickListener {
-            val intentCall = Intent(Intent.ACTION_DIAL, Uri.parse("tel:2288302966"))
+            val intentCall = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${getString(R.string.contact_phone)}"))
             startActivity(intentCall)
         }
 
@@ -92,6 +78,20 @@ class ThirdActivity : AppCompatActivity() {
         return true
     }
 
+    private fun marcarNumeroIngresado() {
+        val phoneNumber = binding.editTextPhone.text.toString().trim()
+        if (phoneNumber.isNotEmpty()) {
+            val intentCall = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
+            startActivity(intentCall)
+        } else {
+            Toast.makeText(
+                this,
+                "Debes marcar un número, intenta nuevamente",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
@@ -100,7 +100,7 @@ class ThirdActivity : AppCompatActivity() {
             }
 
             R.id.menuContactos -> {
-                val intentContactos = Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI)
+                val intentContactos = Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts/people"))
                 startActivity(intentContactos)
             }
 
@@ -108,8 +108,8 @@ class ThirdActivity : AppCompatActivity() {
                 val intentSMS = Intent()
                 intentSMS.action = Intent.ACTION_SENDTO
                 intentSMS.data = Uri.parse("smsto:")
-                intentSMS.putExtra("address", "2288302966")
-                intentSMS.putExtra("sms_body", "Cuerpo del SMS desde un menú")
+                intentSMS.putExtra("address", getString(R.string.contact_phone))
+                intentSMS.putExtra("sms_body", getString(R.string.default_message))
                 startActivity(intentSMS)
             }
 

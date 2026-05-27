@@ -2,8 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="primary">#FF6750A4</color>
-    <color name="primary_dark">#FF4F378B</color>
-    <color name="button_text">#FFFFFFFF</color>
+    <color name="palette_deep_green">#5D7B6F</color>
+    <color name="palette_sage">#A4C3A2</color>
+    <color name="palette_mint">#B0D4B8</color>
+    <color name="palette_warm_light">#EAE7D6</color>
+    <color name="palette_aqua">#D7F9FA</color>
+    <color name="purple_700">@color/palette_deep_green</color>
+    <color name="primary">@color/palette_deep_green</color>
+    <color name="primary_dark">#486358</color>
+    <color name="button_text">@color/white</color>
+    <color name="screen_background">@color/palette_warm_light</color>
+    <color name="field_background">@color/palette_aqua</color>
 </resources>

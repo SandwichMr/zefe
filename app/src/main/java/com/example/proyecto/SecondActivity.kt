@@ -15,9 +15,9 @@ class SecondActivity : AppCompatActivity() {
         val binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val saludo = intent.extras?.getString("saludo")
-        if (saludo != null) {
-            binding.textViewIntent.text = saludo
+        val nombre = "Miguel Zeferino Perez Vazquez"
+        if (nombre.isNotEmpty()) {
+            binding.textViewIntent.text = nombre
             Toast.makeText(this, "Mensaje mostrado", Toast.LENGTH_LONG).show()
         } else {
             Toast.makeText(this, "Está vacío", Toast.LENGTH_LONG).show()

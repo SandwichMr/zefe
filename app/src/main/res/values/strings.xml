@@ -3,4 +3,8 @@
     <string name="contactos">Contactos</string>
     <string name="enviar_sms">Enviar SMS</string>
     <string name="video">Video</string>
+    <string name="email_to">correoprueba_1@hotmail.com</string>
+    <string name="email_cc">correoprueba_2@gmail.com</string>
+    <string name="contact_phone">2288302966</string>
+    <string name="default_message">Esta es una prueba...</string>
 </resources>

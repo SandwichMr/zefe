@@ -5,6 +5,10 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/palette_sage</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/palette_warm_light</item>
     </style>
 
     <style name="Theme.Proyecto" parent="Base.Theme.Proyecto" />

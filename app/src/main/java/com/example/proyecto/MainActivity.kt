@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setIcon(R.mipmap.ic_launcher)
+        supportActionBar?.setIcon(R.drawable.ic_smiley_app)
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
