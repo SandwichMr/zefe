@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThirdActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="phone"
+            android:hint="Número telefónico"
+            android:inputType="phone"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonPhone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButtonPhone"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Marcar número"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextPhone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextPhone"
+            app:srcCompat="@android:drawable/sym_action_call" />
+
+        <EditText
+            android:id="@+id/editTextWeb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:autofillHints="url"
+            android:hint="www.ejemplo.com"
+            android:inputType="textUri"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonWeb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+        <ImageButton
+            android:id="@+id/imageButtonWeb"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Abrir página web"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextWeb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextWeb"
+            app:srcCompat="@android:drawable/ic_menu_search" />
+
+        <Button
+            android:id="@+id/buttonEmailMe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="10dp"
+            android:paddingEnd="19dp"
+            android:text="Escríbeme"
+            android:textColor="@color/button_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextWeb" />
+
+        <Button
+            android:id="@+id/buttonContactPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/ic_phone_android"
+            android:drawablePadding="10dp"
+            android:paddingEnd="12dp"
+            android:text="Contáctame"
+            android:textColor="@color/button_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonEmailMe" />
+
+        <ImageButton
+            android:id="@+id/imageButtonCamera"
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Abrir cámara"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonContactPhone"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

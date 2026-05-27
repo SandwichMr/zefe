@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuPrincipal"
+        android:title="Opciones"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/menuContactos"
+                android:icon="@drawable/ic_contacts"
+                android:title="@string/contactos"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menuSMS"
+                android:icon="@drawable/ic_sms"
+                android:title="@string/enviar_sms"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menuVideo"
+                android:icon="@drawable/ic_video"
+                android:title="@string/video"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>
