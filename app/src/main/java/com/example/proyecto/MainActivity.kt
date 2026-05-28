@@ -2,7 +2,6 @@ package com.example.proyecto
 
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -11,11 +10,10 @@ import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
 
-    private val saludo = "¡Hola desde el Activity Main / Primer pantalla!"
+    private val saludo = "Hola desde el Activity Main / Primer pantalla"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setIcon(R.drawable.ic_smiley_app)

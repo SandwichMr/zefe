@@ -10,7 +10,6 @@
     <color name="purple_700">@color/palette_deep_green</color>
     <color name="primary">@color/palette_deep_green</color>
     <color name="primary_dark">#486358</color>
-    <color name="button_text">@color/white</color>
     <color name="screen_background">@color/palette_warm_light</color>
     <color name="field_background">@color/palette_aqua</color>
 </resources>
